@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Responsive CSS Layout</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h1>My Responsive Webpage</h1>
+  </header>
+
+  <!-- Navigation using Flexbox -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content: Using CSS Grid for layout (content + sidebar) -->
+  <main class="grid-layout">
+    <!-- Main Article Area -->
+    <section class="content">
+      <h2>Main Content</h2>
+      <p>This section uses CSS Grid for overall page layout.</p>
+
+      <!-- Cards Section: Grid inside main content -->
+      <div class="cards">
+        <div class="card">
+          <h3>Card 1</h3>
+          <p>Flexible layout with modern CSS techniques.</p>
+        </div>
+        <div class="card">
+          <h3>Card 2</h3>
+          <p>Designed for desktop, tablet, and mobile views.</p>
+        </div>
+        <div class="card">
+          <h3>Card 3</h3>
+          <p>Responsive with media queries and relative units.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2>Sidebar</h2>
+      <p>Additional links or information here.</p>
+      <ul>
+        <li><a href="#">Resource 1</a></li>
+        <li><a href="#">Resource 2</a></li>
+        <li><a href="#">Resource 3</a></li>
+      </ul>
+    </aside>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 My Website. All rights reserved.</p>
+  </footer>
+</body>
+</html>
+
+
+/* Reset and box-sizing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base styles */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+/* Flexbox for navigation */
+.navbar ul {
+  display: flex;
+  list-style: none;
+  background: #333;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  padding: 1rem;
+  flex: 1;
+  text-align: center;
+}
+
+/* CSS Grid for main layout */
+.grid-layout {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.content, .sidebar {
+  padding: 1rem;
+  background: #f4f4f4;
+}
+
+/* CSS Grid for cards */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.card {
+  padding: 1rem;
+  background: #f4f4f4;
+  text-align: center;
+}
+
+/* Responsive design with media queries */
+@media (max-width: 768px) {
+  /* Flexbox direction change for mobile nav */
+  .navbar ul {
+    flex-direction: column;
+  }
+  
+  /* Grid layout changes for mobile */
+  .grid-layout, .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #333;
+  color: white;
+}

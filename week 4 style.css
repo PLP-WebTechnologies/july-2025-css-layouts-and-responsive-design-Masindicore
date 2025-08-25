@@ -1,0 +1,75 @@
+/* Reset and box-sizing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base styles */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+/* Flexbox for navigation */
+.navbar ul {
+  display: flex;
+  list-style: none;
+  background: #333;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  padding: 1rem;
+  flex: 1;
+  text-align: center;
+}
+
+/* CSS Grid for main layout */
+.grid-layout {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.content, .sidebar {
+  padding: 1rem;
+  background: #f4f4f4;
+}
+
+/* CSS Grid for cards */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.card {
+  padding: 1rem;
+  background: #f4f4f4;
+  text-align: center;
+}
+
+/* Responsive design with media queries */
+@media (max-width: 768px) {
+  /* Flexbox direction change for mobile nav */
+  .navbar ul {
+    flex-direction: column;
+  }
+  
+  /* Grid layout changes for mobile */
+  .grid-layout, .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #333;
+  color: white;
+}
